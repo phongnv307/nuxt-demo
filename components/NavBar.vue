@@ -2,14 +2,19 @@
   <div class="nav">
     <nuxt-link to="/" class="brand"> Real World Events </nuxt-link>
     <nav>
-      <nuxt-link to="/list"> Product List </nuxt-link> |
-      <nuxt-link to="/cart"> Cart </nuxt-link>
+      <nuxt-link to="/cart"> Cart({{ cartItemCount }}) </nuxt-link>
     </nav>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    cartItemCount() {
+      return this.$store.getters['store/cartItemCount']
+    },
+  },
+}
 </script>
 
 <style>
@@ -25,6 +30,8 @@ export default {}
   justify-content: space-between;
   align-items: center;
   height: 60px;
+  background-color: rgb(249, 253, 196);
+  position: fixed;
 }
 .nav .nav-item {
   box-sizing: border-box;

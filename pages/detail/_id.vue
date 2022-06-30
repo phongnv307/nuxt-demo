@@ -1,28 +1,22 @@
 <template>
-  <div class="item">
+  <div class="detail">
+    <h1>detail</h1>
     <img :src="item.image_link" alt="" />
-
     <p class="name">{{ item.name }}</p>
     <p class="price">${{ item.price }}</p>
-    <nuxt-link :to="{ path: '/detail/' + item.id, params: { id: item.id } }"
-      >More info</nuxt-link
-    >
     <button @click="addToCart()">Add to cart</button>
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    item: {
-      type: Object,
-      default() {
-        return {}
-      },
-      required: true,
-    },
-  },
+import json from '@/db.json'
 
+export default {
+  asyncData({ params }) {
+    return {
+      item: json[params.id],
+    }
+  },
   methods: {
     addToCart() {
       this.$store.dispatch('store/addItemToCart', {
@@ -33,8 +27,8 @@ export default {
 }
 </script>
 
-<style scoped>
-/* .item {
-  position: relative;
-} */
+<style>
+.detail {
+  padding-top: 60px;
+}
 </style>
