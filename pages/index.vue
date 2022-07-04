@@ -25,5 +25,7 @@ export default {
 <style scoped>
 .list {
   padding-top: 60px;
+  display: block;
+  margin: auto 30px;
 }
 </style>

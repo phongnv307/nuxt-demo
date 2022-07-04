@@ -22,6 +22,7 @@ export default {
 }
 
 body {
-  background-color: #f2f1f6;
+  background-color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 </style>

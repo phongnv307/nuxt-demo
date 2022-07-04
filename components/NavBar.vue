@@ -1,9 +1,7 @@
 <template>
   <div class="nav">
-    <nuxt-link to="/" class="brand"> Real World Events </nuxt-link>
-    <nav>
-      <nuxt-link to="/cart"> Cart({{ cartItemCount }}) </nuxt-link>
-    </nav>
+    <nuxt-link to="/" class="home"> ShopVjp </nuxt-link>
+    <nuxt-link to="/cart" class="cart"> Cart({{ cartItemCount }}) </nuxt-link>
   </div>
 </template>
 
@@ -17,31 +15,31 @@ export default {
 }
 </script>
 
-<style>
-.brand {
+<style scoped>
+.home {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.5em;
-  color: #39b982;
+  font-size: 1.9em;
+  color: white;
   text-decoration: none;
+  padding-left: 50px;
+}
+.cart {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
 }
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: rgb(249, 253, 196);
+  width: 100vw;
+  background-color: #326e51;
   position: fixed;
-}
-.nav .nav-item {
-  box-sizing: border-box;
-  margin: 0 5px;
-  color: rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-}
-.nav .nav-item.router-link-exact-active {
-  color: #39b982;
-  border-bottom: solid 2px #39b982;
 }
 .nav a {
   display: inline-block;
